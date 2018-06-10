@@ -3,7 +3,7 @@
 	require_once './Consumer.php';
 	require_once './classes/Database.php';
 	$consumer = new Consumer();
-	$database = new Database();
+	// $database = new Database();
 
 	$json = $consumer->extractData('json','localhost/Edf3lyTask2/TestApis/index.json');
 	$xml = $consumer->extractData('xml','localhost/Edf3lyTask2/TestApis/index.xml');
