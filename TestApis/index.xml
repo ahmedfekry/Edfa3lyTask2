@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <data>
+      <product>
+         <id>1</id>
+         <name>A green door</name>
+         <price>12.5</price>
+         <tags>home</tags>
+         <tags>green</tags>
+      </product>
+      <product>
+         <id>2</id>
+         <name>A red table</name>
+         <price>143.5</price>
+         <tags>home</tags>
+         <tags>red</tags>
+      </product>
+      <product>
+         <id>3</id>
+         <name>A black panther</name>
+         <price>121.5</price>
+         <tags>animal</tags>
+         <tags>green</tags>
+      </product>
+      <product>
+         <id>4</id>
+         <name>A green book</name>
+         <price>12.5</price>
+         <tags>book</tags>
+         <tags>green</tags>
+      </product>
+   </data>
+</root>
