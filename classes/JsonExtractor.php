@@ -11,8 +11,6 @@
 		public function extractJSON($url){
 			$fetcher = new Fetcher();
 
-			// todo add to database
-
 			return $fetcher->fetch($url); 
 		}
 
@@ -22,10 +20,6 @@
 		
 		public function extractCSVFile($url){
 			// do nothing
-		}
-		
-		public function extractJSONFile($url){
-			// elso do nothing 
 		}
 	}
 

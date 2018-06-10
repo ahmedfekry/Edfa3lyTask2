@@ -16,10 +16,7 @@
 			$fetcher = new Fetcher();
 			$result = $fetcher->fetch($url);
 
-			// parse the xml to readable json
 			$xml = simplexml_load_string($result);
-			// $json = json_encode($xml);
-			// $array = json_decode($json,TRUE);
 
 			return json_encode($xml);
 		}
@@ -27,10 +24,7 @@
 		public function extractCSVFile($url){
 			// do nothing
 		}
-		
-		public function extractJSONFile($url){
-			// elso do nothing 
-		}
+
 	}
 
 

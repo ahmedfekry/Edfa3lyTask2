@@ -12,7 +12,7 @@
 
 		public function extractData($dataType,$url)
 		{
-			if ($dataType == 'json' || $dataType == 'xml') {
+			if ($dataType == 'json' || $dataType == 'xml' || $dataType == 'csv') {
 				$this->dataAdaptor = new DataAdaptor($dataType);
 				return $this->dataAdaptor->extractData($dataType,$url);
 			}else{
