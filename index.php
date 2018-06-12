@@ -12,6 +12,15 @@
 	echo $xmlConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.xml');
 
 	$csvConsumer = new CSVConsumer();
-	echo $csvConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.csv');
+	$result = $csvConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.csv');
 
+	$array = json_decode($result);
+
+	var_dump($array);
+
+	// $database = new Database();
+
+	// foreach ($array as $obj) {
+	// 	$database->addProduct($obj['name'],$obj['price'],$obj['tags']);
+	// }
  ?>
