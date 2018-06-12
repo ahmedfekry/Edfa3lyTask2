@@ -1,22 +1,17 @@
 <?php 
 	
-	require_once './Consumer.php';
-	require_once './classes/Database.php';
-	$consumer = new Consumer();
-	// $database = new Database();
+	function __autoload($classname) {
+	    $filename = "./Polymorphism/". $classname .".php";
+	    require_once($filename);
+	}
 
-	$json = $consumer->extractData('json','localhost/Edf3lyTask2/TestApis/index.json');
-	$xml = $consumer->extractData('xml','localhost/Edf3lyTask2/TestApis/index.xml');
-	$csv = $consumer->extractData('csv','./TestApis/index.csv');
+	$jsonConsumer = new JsonConsumer();
+	echo $jsonConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.json');
 
-	echo $json;
-	echo $xml;
-	echo $csv;
+	$xmlConsumer = new XMLConsumer();
+	echo $xmlConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.xml');
 
-	
-	// add to database
-	// foreach (json_decode($json)->data->product as $product) {
-	// 	// die(json_encode($product));
-	// 	$database->addProduct($product['name'],$product['price'],$product['tags']);
-	// };
+	$csvConsumer = new CSVConsumer();
+	echo $csvConsumer->consume('http://localhost/Edf3lyTask2/TestApi/index.csv');
+
  ?>

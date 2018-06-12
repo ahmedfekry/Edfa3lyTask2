@@ -1,22 +1,23 @@
- <?php 
-	
-	require_once './interfaces/AdvancedDataExtractor.php';
-	require_once 'Fetcher.php';
+<?php 
+
+	require_once './Polymorphism/Consumer.php';
+	require_once './Polymorphism/Fetcher.php';
+
 	/**
 	* 
 	*/
-	class CSVExtractor implements AdvancedDataExtractor
+	class CSVConsumer implements Consumer
 	{
-
-		public function extractJSON($url){
-			// do nothing
-		}
-
-		public function extractXML($url){
-			// do nothing
-		}
 		
-		public function extractCSVFile($url){
+		protected $fetcher;
+
+		public function __construct()
+		{
+			$this->fetcher = new Fetcher();
+		}
+
+		public function consume($url)
+		{
 			$row = 1;
 			$result = array('data' => array('product' => array()));
 			if (($handle = fopen($url, "r")) !== FALSE) {
@@ -43,6 +44,7 @@
 			}
 			return json_encode($result);
 		}
+		
 	}
 
 
